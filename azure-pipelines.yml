@@ -20,6 +20,8 @@ stages:
     displayName: "Test Stage"
     jobs:
       - job:
+        pool:
+          vmImage: 'windows-latest'
         displayName: "Test job"
         steps:
           - task: NodeTool@0
