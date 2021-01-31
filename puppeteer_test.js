@@ -14,7 +14,7 @@ let mytxt = `Handy ${handynr}
 email:${email}
 Reserver for :${no_of_persons}
 `;
-no_of_valid_args = (no_of_persons*2)+2+3
+no_of_valid_args = (no_of_persons*2)+2+3;
 if (argv.length != no_of_valid_args)
 {
     console.log("Please enter all needed data ! you need to enter : (number of reservations) (Phone number) (email) {according to the number of reservations repeat the followning!}(first name of first guest) (Last name of first guest) ...");
