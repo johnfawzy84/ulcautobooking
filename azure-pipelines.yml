@@ -3,10 +3,12 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+trigger:
+  - main
 
 
 schedules:
-  - cron: "31 21 * * 0"
+  - cron: "36 20 * * 0"
     displayName: "Started with Timer!"
     always: true
     branches:
