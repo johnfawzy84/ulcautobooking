@@ -22,8 +22,11 @@ stages:
       - job:
         displayName: "Test job"
         steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '6.x'
+              checkLatest: true
           - script: |
-              echo Add other tasks to build, test, and deploy your project.
-              echo See https://aka.ms/yaml
+              node puppeteer_test.js 2 015778442307 john.iskander@gmx.de John Iskander Jackline Tawadros
             displayName: 'Run a multi-line script'
   
