@@ -1,12 +1,12 @@
-const { argv } = require('process');
+const { argv, exit } = require('process');
 const puppeteer = require('puppeteer');
-var schedule = require('node-schedule');
+//var schedule = require('node-schedule');
 const no_of_persons = process.argv[2];
-var rule = new schedule.RecurrenceRule();
+/*var rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [0, new schedule.Range(4, 6)];
 rule.hour = 18;
 rule.minute = 03;
-rule.tz = "CET";
+rule.tz = "CET";*/
 const handynr = process.argv[3];
 const email = process.argv[4];
 
@@ -21,20 +21,33 @@ if (argv.length != no_of_valid_args)
 }
 
 console.log (mytxt);
-var j = schedule.scheduleJob(rule,
-function() { 
-  (async () => {
+//var j = schedule.scheduleJob(rule,
+//function() { 
+(async () => {
   console.log("Executing the automation of form filling!!");
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto('https://tickets.urbanlifechurch.de/eventOverview.php');
-  await Promise.all([
-      page.waitForNavigation(),
-      page.click("#overview > tbody > tr:nth-child(2) > td.bookingAction > a.linkButton.dobooking")
-  ]);
-  await page.pdf({path: '01_GottesDienst11HrForm.pdf', format: 'A4'});
+
   try
   {
+    //calling the main booking page
+    await page.goto('https://tickets.urbanlifechurch.de');
+    await Promise.all([
+        page.waitForNavigation(),
+        page.click("#overview > tbody > tr:nth-child(2) > td.bookingAction > a.linkButton.dobooking")
+    ]);
+    await page.pdf({path: '01_GottesDienst11HrForm.pdf', format: 'A4'});
+  }
+  catch(err)
+  {
+    console.log("can't open the page!");
+    console.log(err);
+    exit(1);
+  }
+
+  try
+  {
+    //filling the initial data and accepting the agb
     const phone = await page.$("#phone");
     console.log("handynummer : ",handynr);
     await phone.type(handynr);
@@ -47,10 +60,12 @@ function() {
   }
   catch(err)
   {
-      console.log(err)
+      console.log("error filling the data in the first form");
+      console.log(err);
+      exit(2);
   }
   await page.pdf({path: '02_GottesDienst11HrFormFilled.pdf', format: 'A4'});
-
+  //clicking the submit button for the next step
   await Promise.all([
       page.waitForNavigation(),
       page.click("#submitStepA")
@@ -58,6 +73,7 @@ function() {
   
   await page.pdf({path: '03_GottesDienst11HrForm2.pdf', format: 'A4'});
 
+  //filling the second form with the names 
   console.log("Filling Persons Names!!");
   try{
       for(i=0,j=5;i<no_of_persons;i++,j+=2)
@@ -73,9 +89,12 @@ function() {
   }
   catch(err)
   {
-    console.log(err)
+    console.log("Error filling the names of of the persons");
+    console.log(err);
+    exit(3);
   }
   await page.pdf({path: '04_GottesDienst11HrForm2Filled.pdf', format: 'A4'});
+  //submiting the information 
   await Promise.all([
     page.waitForNavigation(),
     page.click("#submitStepB")
@@ -83,6 +102,4 @@ function() {
     await page.pdf({path: '05_BuchungDetails.pdf', format: 'A4'});
     console.log("Booking for the Sunday Service completed :) Finished!!!")
   await browser.close();
-})
-();}
-);
+})();
