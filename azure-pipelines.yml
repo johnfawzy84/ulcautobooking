@@ -31,6 +31,10 @@ stages:
           - task: Npm@1
             inputs:
               command: 'install'
+          - task: Npm@1
+            inputs:
+              command: 'custom'
+              customCommand: 'install puppeteer'
           - script: |
               npm i puppeteer
               node puppeteer_test2.js 2 015778442307 john.iskander@gmx.de John Iskander Jackline Tawadros
