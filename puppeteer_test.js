@@ -23,7 +23,7 @@ if (argv.length != no_of_valid_args)
 console.log (mytxt);
 //var j = schedule.scheduleJob(rule,
 //function() { 
-async () => {
+  (async () => {
   console.log("Executing the automation of form filling!!");
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -102,4 +102,4 @@ async () => {
     await page.pdf({path: '05_BuchungDetails.pdf', format: 'A4'});
     console.log("Booking for the Sunday Service completed :) Finished!!!")
   await browser.close();
-}
+})();
