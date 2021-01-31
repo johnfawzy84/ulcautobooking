@@ -5,6 +5,8 @@
 
 trigger:
 - main
+schedules:
+  - cron: "02 21 * * 0"
 
 pool:
   vmImage: 'ubuntu-latest'
