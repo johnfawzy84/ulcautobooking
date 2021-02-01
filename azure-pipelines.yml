@@ -44,9 +44,8 @@ stages:
             displayName: 'list all files'
           - task: CopyFiles@2
             inputs:
-              sourceFolder: .
-              contents: '**/(*.png|*.pdf)'
-              targetFolder: ./WebApp
+              Contents: '*.png'
+              TargetFolder: 'WebApp'
           - task: PublishBuildArtifacts@1
             inputs:
               pathToPublish: ./WebApp
