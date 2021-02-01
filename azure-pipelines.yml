@@ -22,7 +22,7 @@ stages:
       - job:
         pool:
           vmImage: 'windows-latest'
-        displayName: "Test job"
+        displayName: "Puppeteer job"
         steps:
           - task: NodeTool@0
             inputs:
@@ -31,12 +31,11 @@ stages:
           - task: Npm@1
             inputs:
               command: 'install'
-          - task: Npm@1
-            inputs:
-              command: 'custom'
-              customCommand: 'install puppeteer'
+
           - script: |
-              npm i puppeteer
+              npm install --save-dev puppeteer
+            displayName: 'Install Puppeteer'
+          - script: |    
               node puppeteer_test2.js 2 015778442307 john.iskander@gmx.de John Iskander Jackline Tawadros
-            displayName: 'Run a multi-line script'
+            displayName: 'Run booking puppeteer script'
   
