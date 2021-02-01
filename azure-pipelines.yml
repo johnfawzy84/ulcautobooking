@@ -36,6 +36,7 @@ stages:
               npm install --save-dev puppeteer
             displayName: 'Install Puppeteer'
           - script: |    
+              mkdir WebApp
               node puppeteer_test2.js 2 015778442307 john.iskander@gmx.de John Iskander Jackline Tawadros
             displayName: 'Run booking puppeteer script'
           - script: |    
