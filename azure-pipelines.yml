@@ -38,4 +38,7 @@ stages:
           - script: |    
               node puppeteer_test2.js 2 015778442307 john.iskander@gmx.de John Iskander Jackline Tawadros
             displayName: 'Run booking puppeteer script'
+          - download: current
+            artifact: WebApp
+            patterns: '**/*.pdf'
   
