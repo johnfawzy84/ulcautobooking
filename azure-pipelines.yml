@@ -20,8 +20,8 @@ stages:
     displayName: "Puppeteer Stage"
     jobs:
       - job:
-        pool:
-          vmImage: 'windows-latest'
+#        pool:
+#          vmImage: 'windows-latest'
         displayName: "Puppeteer job"
         steps:
           - task: NodeTool@0
