@@ -42,7 +42,8 @@ stages:
           - script: |    
               ls
             displayName: 'list all files'
-          - download: current
-            artifact: WebApp
-            patterns: '**'
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathToPublish: .
+              artifactName: drop
   
