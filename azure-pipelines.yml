@@ -38,6 +38,9 @@ stages:
           - script: |    
               node puppeteer_test2.js 2 015778442307 john.iskander@gmx.de John Iskander Jackline Tawadros
             displayName: 'Run booking puppeteer script'
+          - script: |    
+              ls
+            displayName: 'list all files'
           - task: CopyFiles@2
             inputs:
               sourceFolder: '$(Build.SourcesDirectory)'
