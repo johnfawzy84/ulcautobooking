@@ -42,8 +42,13 @@ stages:
           - script: |    
               ls
             displayName: 'list all files'
+          - task: CopyFiles@2
+            inputs:
+              sourceFolder: .
+              contents: '(*.png|*.pdf)'
+              targetFolder: 'WebApp'
           - task: PublishBuildArtifacts@1
             inputs:
-              pathToPublish: .
+              pathToPublish: 'WebApp'
               artifactName: drop
   
