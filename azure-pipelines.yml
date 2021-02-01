@@ -41,13 +41,7 @@ stages:
           - script: |    
               ls
             displayName: 'list all files'
-          - task: CopyFiles@2
-            inputs:
-              sourceFolder: '$(Build.SourcesDirectory)'
-              contents: '**/$(BuildConfiguration)/**/?(*.png|*.pdf)'
-              targetFolder: '$(Build.ArtifactStagingDirectory)'
-          - task: PublishBuildArtifacts@1
-            inputs:
-              pathToPublish: '$(Build.ArtifactStagingDirectory)'
-              artifactName: example
+          - download: current
+            artifact: WebApp
+            patterns: '**'
   
