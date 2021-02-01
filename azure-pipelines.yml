@@ -26,7 +26,7 @@ stages:
         steps:
           - task: NodeTool@0
             inputs:
-              versionSpec: '9.x'
+              versionSpec: '10.x'
               checkLatest: true
           - task: Npm@1
             inputs:
