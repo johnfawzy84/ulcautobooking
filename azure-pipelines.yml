@@ -45,10 +45,10 @@ stages:
           - task: CopyFiles@2
             inputs:
               sourceFolder: .
-              contents: '(*.png|*.pdf)'
-              targetFolder: 'WebApp'
+              contents: '**/(*.png|*.pdf)'
+              targetFolder: ./WebApp
           - task: PublishBuildArtifacts@1
             inputs:
-              pathToPublish: 'WebApp'
+              pathToPublish: ./WebApp
               artifactName: drop
   
