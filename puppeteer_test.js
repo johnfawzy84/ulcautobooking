@@ -32,11 +32,12 @@ console.log (mytxt);
   {
     //calling the main booking page
     await page.goto('https://tickets.urbanlifechurch.de');
+    await page.pdf({path: '00_'+handynr+'_MainPage.pdf', format: 'A4'});
     await Promise.all([
         page.waitForNavigation(),
         page.click("#overview > tbody > tr:nth-child(2) > td.bookingAction > a.linkButton.dobooking")
     ]);
-    await page.pdf({path: '01_GottesDienst11HrForm.pdf', format: 'A4'});
+    await page.pdf({path: '01_'+handynr+'_GottesDienst11HrForm.pdf', format: 'A4'});
   }
   catch(err)
   {
@@ -64,14 +65,14 @@ console.log (mytxt);
       console.log(err);
       exit(2);
   }
-  await page.pdf({path: '02_GottesDienst11HrFormFilled.pdf', format: 'A4'});
+  await page.pdf({path: '02_'+handynr+'_GottesDienst11HrFormFilled.pdf', format: 'A4'});
   //clicking the submit button for the next step
   await Promise.all([
       page.waitForNavigation(),
       page.click("#submitStepA")
   ]);
   
-  await page.pdf({path: '03_GottesDienst11HrForm2.pdf', format: 'A4'});
+  await page.pdf({path: '03_'+handynr+'_GottesDienst11HrForm2.pdf', format: 'A4'});
 
   //filling the second form with the names 
   console.log("Filling Persons Names!!");
@@ -93,13 +94,13 @@ console.log (mytxt);
     console.log(err);
     exit(3);
   }
-  await page.pdf({path: '04_GottesDienst11HrForm2Filled.pdf', format: 'A4'});
+  await page.pdf({path: '04_'+handynr+'_GottesDienst11HrForm2Filled.pdf', format: 'A4'});
   //submiting the information 
   await Promise.all([
     page.waitForNavigation(),
     page.click("#submitStepB")
     ]);
-    await page.pdf({path: '05_BuchungDetails.pdf', format: 'A4'});
+    await page.pdf({path: '05_'+handynr+'_BuchungDetails.pdf', format: 'A4'});
     console.log("Booking for the Sunday Service completed :) Finished!!!")
   await browser.close();
 })();
