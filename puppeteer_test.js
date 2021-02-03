@@ -35,7 +35,7 @@ console.log (mytxt);
     await page.pdf({path: '00_'+handynr+'_MainPage.pdf', format: 'A4'});
     await Promise.all([
         page.waitForNavigation(),
-        page.click("#overview > tbody > tr:nth-child(2) > td.bookingAction > a.linkButton.dobooking")
+        page.click("#overview > tbody > tr:nth-child(2) > td.bookingAction > a.linkButton.dobooking#overview > tbody > tr > td.bookingAction > a.linkButton.dobooking > input[type=submit]")
     ]);
     await page.pdf({path: '01_'+handynr+'_GottesDienst11HrForm.pdf', format: 'A4'});
   }
