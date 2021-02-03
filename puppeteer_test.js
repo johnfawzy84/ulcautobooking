@@ -33,9 +33,10 @@ console.log (mytxt);
     //calling the main booking page
     await page.goto('https://tickets.urbanlifechurch.de');
     await page.pdf({path: '00_'+handynr+'_MainPage.pdf', format: 'A4'});
+    ///html/body/div/table/tbody/tr/td[4]/a[1]/input
     await Promise.all([
         page.waitForNavigation(),
-        page.click("#overview > tbody > tr:nth-child(2) > td.bookingAction > a.linkButton.dobooking#overview > tbody > tr > td.bookingAction > a.linkButton.dobooking > input[type=submit]")
+        page.click("#overview > tbody > tr > td.bookingAction > a.linkButton.dobooking > input[type=submit]")
     ]);
     await page.pdf({path: '01_'+handynr+'_GottesDienst11HrForm.pdf', format: 'A4'});
   }
@@ -49,13 +50,24 @@ console.log (mytxt);
   try
   {
     //filling the initial data and accepting the agb
+    await page.waitForSelector('#phone');
+    //await page.$eval('#phone', el => el.value = handynr);
     const phone = await page.$("#phone");
-    console.log("handynummer : ",handynr);
+    //console.log("handynummer : ",handynr);
     await phone.type(handynr);
+    await page.waitForSelector('#mail');
+    //await page.$eval('#mail', el => el.value = email);
     const mail = await page.$("#mail");
     await mail.type(email);
+    await page.waitForSelector('#mailRetype');
+    //await page.$eval('#mailRetype', el => el.value = email);
+    const mailc = await page.$("#mailRetype");
+    await mailc.type(email);
     const agb = await page.$("#agb");
     await agb.click();
+
+    await page.waitForSelector('#seats');
+    // await page.$eval('#seats', el => el.value = no_of_persons.toString());
     const seats = await page.$("#seats");
     await seats.type(no_of_persons.toString());  
   }
