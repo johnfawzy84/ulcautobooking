@@ -43,6 +43,7 @@ stages:
           - script: |    
               node puppeteer_test.js 2 015786178127 niantoni94@web.de Nico Antoni Saskia Alber
             displayName: 'Nico - Run booking puppeteer script'
+            continueOnError: true
           - script: |    
               ls
             displayName: 'list all files'
