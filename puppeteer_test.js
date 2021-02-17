@@ -34,9 +34,26 @@ console.log (mytxt);
     await page.goto('https://tickets.urbanlifechurch.de');
     await page.pdf({path: '00_'+handynr+'_MainPage.pdf', format: 'A4'});
     ///html/body/div/table/tbody/tr/td[4]/a[1]/input
+    //#overview > tbody > tr:nth-child(2) > td.title
+    ind = 0;
+    for ( i= 1; i<5; i++)
+    {
+      //#overview > tbody > tr:nth-child(1) > td.title
+      tableCellName = await page.$eval('#overview > tbody > tr:nth-child('+i.toString()+') > td.title', el => el.innerHTML);
+      const tableCellName2 = await page.$x('//*[@id="overview"]/tbody/tr[1]/td[2]');
+      console.log('tableCell:'+tableCellName);
+      if (tableCellName.includes("11Uhr Celebration"))
+      {
+        console.log("Found it!! it is number:"+i.toString());
+        ind = i;
+        break;
+      }
+    }
+    console.log("Found it!! it is number:"+ind.toString());
+
     await Promise.all([
         page.waitForNavigation(),
-        page.click("#overview > tbody > tr > td.bookingAction > a.linkButton.dobooking > input[type=submit]")
+        page.click("#overview > tbody > tr:nth-child("+ind.toString()+") > td.bookingAction > a.linkButton.dobooking > input[type=submit]")
     ]);
     await page.pdf({path: '01_'+handynr+'_GottesDienst11HrForm.pdf', format: 'A4'});
   }
@@ -94,9 +111,11 @@ console.log (mytxt);
         console.log(`Entering Person[${i}]
         First name : ${process.argv[j]}
         Last name : ${process.argv[j+1]}`);
-        const per_vorname = await page.$(`#person\\[${i}\\]\\[firstname\\]`);
+        //#person0firstname
+        const per_vorname = await page.$(`#person${i}firstname`);
         await per_vorname.type(process.argv[j+1]);
-        const per_nachname = await page.$(`#person\\[${i}\\]\\[surname\\]`);
+        //#person0surname
+        const per_nachname = await page.$(`#person${i}surname`);
         await per_nachname.type(process.argv[j+1]);
       }
   }
