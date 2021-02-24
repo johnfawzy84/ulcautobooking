@@ -112,9 +112,11 @@ console.log (mytxt);
         First name : ${process.argv[j]}
         Last name : ${process.argv[j+1]}`);
         //#person0firstname
+        await page.waitForSelector(`#person${i}firstname`);
         const per_vorname = await page.$(`#person${i}firstname`);
         await per_vorname.type(process.argv[j+1]);
         //#person0surname
+        await page.waitForSelector(`#person${i}surname`);
         const per_nachname = await page.$(`#person${i}surname`);
         await per_nachname.type(process.argv[j+1]);
       }
