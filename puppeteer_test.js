@@ -114,7 +114,7 @@ console.log (mytxt);
         //#person0firstname
         await page.waitForSelector(`#person${i}firstname`);
         const per_vorname = await page.$(`#person${i}firstname`);
-        await per_vorname.type(process.argv[j+1]);
+        await per_vorname.type(process.argv[j]);
         //#person0surname
         await page.waitForSelector(`#person${i}surname`);
         const per_nachname = await page.$(`#person${i}surname`);
