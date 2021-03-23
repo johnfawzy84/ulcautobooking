@@ -33,6 +33,30 @@ console.log (mytxt);
     //calling the main booking page
     await page.goto('https://tickets.urbanlifechurch.de');
     await page.pdf({path: '00_'+handynr+'_MainPage.pdf', format: 'A4'});
+    notavailableticket = await page.evaluate(() => {
+      const tds = Array.from(document.querySelectorAll('table tr td'))
+      return tds.map(td => td.innerText)
+    });
+    console.log(notavailableticket);
+    counter = 0;
+    while (notavailableticket[4].includes("keine Veranstaltungen"))
+    {
+      await page.reload({ waitUntil: ["networkidle0", "domcontentloaded"] });
+      notavailableticket = await page.evaluate(() => {
+        const tds = Array.from(document.querySelectorAll('table tr td'))
+        return tds.map(td => td.innerText)
+      });
+      console.log(notavailableticket);
+      counter += 1; 
+      if (counter>500)
+      {
+        exit(1);
+      }
+      else
+      {
+        console.log(`The current refresh try ${counter}`);
+      }
+    }
     ///html/body/div/table/tbody/tr/td[4]/a[1]/input
     //#overview > tbody > tr:nth-child(2) > td.title
     ind = 0;
@@ -40,11 +64,13 @@ console.log (mytxt);
     {
       //#overview > tbody > tr:nth-child(1) > td.title
       tableCellName = await page.$eval('#overview > tbody > tr:nth-child('+i.toString()+') > td.title', el => el.innerHTML);
+      numberOfRemainingSeats = await page.$eval('#overview > tbody > tr:nth-child('+i.toString()+') > td.seats', el => el.innerHTML);
       const tableCellName2 = await page.$x('//*[@id="overview"]/tbody/tr[1]/td[2]');
       console.log('tableCell:'+tableCellName);
       if (tableCellName.includes("11Uhr Celebration"))
       {
         console.log("Found it!! it is number:"+i.toString());
+        console.log("Number Of remaining seats: "+numberOfRemainingSeats);
         ind = i;
         break;
       }
