@@ -37,7 +37,7 @@ stages:
             displayName: 'Install Puppeteer'
           - script: |    
               mkdir WebApp
-              node puppeteer_test.js 2 015778442307 john.iskander@gmx.de John Iskander Jackline Tawadros
+              node puppeteer_test.js $(numberOfAttendees) $(telephoneNumber) $(emailAddress) $(user1FN) $(user1LN) $(user2FN) $(user2LN)
             displayName: 'John - Run booking puppeteer script'
             continueOnError: true 
           - script: |    
