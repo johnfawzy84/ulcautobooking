@@ -41,7 +41,7 @@ stages:
             displayName: 'John - Run booking puppeteer script'
             continueOnError: true 
           - script: |    
-              node puppeteer_test.js 2 015786178127 niantoni94@web.de Nico Antoni Saskia Alber
+              node puppeteer_test.js $(numberOfAttendees) $(telephoneNumber2) $(emailAddress) $(user3FN) $(user3LN) $(user4FN) $(user4LN)
             displayName: 'Nico - Run booking puppeteer script'
             continueOnError: true
           - script: |    
