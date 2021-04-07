@@ -1,5 +1,27 @@
 const { argv, exit } = require('process');
 const puppeteer = require('puppeteer');
+ind = -1 ;
+async function find_service(page)
+{
+  for ( i= 1; i<5; i++)
+    {
+      //#overview > tbody > tr:nth-child(1) > td.title
+      //#overview > tbody > tr:nth-child(1) > td.title
+      tableCellName = await page.$eval('#overview > tbody > tr:nth-child('+i.toString()+') > td.title', el => el.innerHTML);
+      numberOfRemainingSeats = await page.$eval('#overview > tbody > tr:nth-child('+i.toString()+') > td.seats', el => el.innerHTML);
+      const tableCellName2 = await page.$x('//*[@id="overview"]/tbody/tr[1]/td[2]');
+      console.log('tableCell:'+tableCellName);
+      if (tableCellName.includes("11Uhr"))
+      {
+        console.log("Found it!! it is number:"+i.toString());
+        console.log("Number Of remaining seats: "+numberOfRemainingSeats);
+        ind = i;
+        break;
+      }
+    }
+}
+
+
 //var schedule = require('node-schedule');
 const no_of_persons = process.argv[2];
 /*var rule = new schedule.RecurrenceRule();
@@ -20,6 +42,7 @@ if (argv.length != no_of_valid_args)
     console.log("Please enter all needed data ! you need to enter : (number of reservations) (Phone number) (email) {according to the number of reservations repeat the followning!}(first name of first guest) (Last name of first guest) ...");
 }
 
+
 console.log (mytxt);
 //var j = schedule.scheduleJob(rule,
 //function() { 
@@ -39,7 +62,7 @@ console.log (mytxt);
     });
     console.log(notavailableticket);
     counter = 0;
-    while (notavailableticket[4].includes("keine Veranstaltungen"))
+    while (notavailableticket[4].includes("keine Veranstaltungen") || ind===-1)
     {
       await page.reload({ waitUntil: ["networkidle0", "domcontentloaded"] });
       notavailableticket = await page.evaluate(() => {
@@ -47,6 +70,7 @@ console.log (mytxt);
         return tds.map(td => td.innerText)
       });
       console.log(notavailableticket);
+      
       counter += 1; 
       if (counter>500)
       {
@@ -56,26 +80,9 @@ console.log (mytxt);
       {
         console.log(`The current refresh try ${counter}`);
       }
+      await find_service(page);
     }
-    ///html/body/div/table/tbody/tr/td[4]/a[1]/input
-    //#overview > tbody > tr:nth-child(2) > td.title
-    ind = 0;
-    for ( i= 1; i<5; i++)
-    {
-      //#overview > tbody > tr:nth-child(1) > td.title
-      //#overview > tbody > tr:nth-child(1) > td.title
-      tableCellName = await page.$eval('#overview > tbody > tr:nth-child('+i.toString()+') > td.title', el => el.innerHTML);
-      numberOfRemainingSeats = await page.$eval('#overview > tbody > tr:nth-child('+i.toString()+') > td.seats', el => el.innerHTML);
-      const tableCellName2 = await page.$x('//*[@id="overview"]/tbody/tr[1]/td[2]');
-      console.log('tableCell:'+tableCellName);
-      if (tableCellName.includes("11Uhr"))
-      {
-        console.log("Found it!! it is number:"+i.toString());
-        console.log("Number Of remaining seats: "+numberOfRemainingSeats);
-        ind = i;
-        break;
-      }
-    }
+
     console.log("Found it!! it is number:"+ind.toString());
 
     await Promise.all([
