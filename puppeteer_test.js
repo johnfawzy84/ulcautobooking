@@ -70,7 +70,10 @@ console.log (mytxt);
         return tds.map(td => td.innerText)
       });
       console.log(notavailableticket);
-      
+      if (!(notavailableticket[4].includes("keine Veranstaltungen")))
+      {
+        await find_service(page); 
+      }
       counter += 1; 
       if (counter>500)
       {
@@ -80,7 +83,7 @@ console.log (mytxt);
       {
         console.log(`The current refresh try ${counter}`);
       }
-      await find_service(page);
+      
     }
 
     console.log("Found it!! it is number:"+ind.toString());
