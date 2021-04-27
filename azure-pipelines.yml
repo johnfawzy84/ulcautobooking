@@ -51,11 +51,7 @@ stages:
           - script: |    
               node puppeteer_test.js 2 $(telephoneNumber4) $(emailAddress4) $(user5FN) $(user5LN) $(user6FN) $(user6LN) 
             displayName: 'Lukas - Run booking puppeteer script'
-            continueOnError: true
-          - script: |    
-              node puppeteer_test.js 2 $(telephoneNumber5) $(emailAddress5) $(user7FN) $(user7LN) $(user8FN) $(user8LN) 
-            displayName: 'David - Run booking puppeteer script'
-            continueOnError: true                
+            continueOnError: true              
           - script: |    
               node puppeteer_test.js 1 $(telephoneNumber6) $(emailAddress6) $(user9FN) $(user9LN)
             displayName: 'Chris - Run booking puppeteer script'
