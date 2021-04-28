@@ -39,11 +39,7 @@ stages:
               mkdir WebApp
               node puppeteer_test.js 2 $(telephoneNumber) $(emailAddress) $(user1FN) $(user1LN) $(user2FN) $(user2LN) Ruben Platia Mareike Platia Lukas Gesell Celine Stieber Eliane David David Eliane 
             displayName: 'John - Run booking puppeteer script'
-            continueOnError: true 
-          - script: |    
-              node puppeteer_test.js 1 $(telephoneNumber7) $(emailAddress7) $(user10FN) $(user10LN)
-            displayName: 'Ophelie - Run booking puppeteer script'
-            continueOnError: true     
+            continueOnError: true  
           - script: |    
               ls
             displayName: 'list all files'
