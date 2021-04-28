@@ -64,8 +64,8 @@ console.log(mytxt);
 
     try {
         //calling the main booking page
-        //await page.goto('https://tickets.urbanlifechurch.de');
-        await page.goto("C:\\Users\\johni\\first-app\\NotMainService.html");
+        await page.goto("https://tickets.urbanlifechurch.de");
+        //await page.goto("C:\\Users\\johni\\first-app\\NotMainService.html");
         await page.pdf({
             path: "00_" + handynr + "_MainPage.pdf",
             format: "A4",
