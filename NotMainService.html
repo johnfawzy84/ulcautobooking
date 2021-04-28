@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)file:///C:/Users/johni/first-app/ULC%20Tickets.html -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <meta name="apple-mobile-web-app-title" content="CodePen" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="./NotMainService_files/styles.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="./NotMainService_files/custom.css.php"
+        />
+        <title>ULC Tickets</title>
+    </head>
+    <body>
+        <div class="eventplanner">
+            <div id="headerActions">
+                <div id="account"></div>
+                <div class="login">
+                    <form
+                        action="https://tickets.urbanlifechurch.de/"
+                        method="POST"
+                    >
+                        <input
+                            class="loginButton"
+                            type="submit"
+                            name="showLogin"
+                            value="Verwaltung"
+                        />
+                    </form>
+                </div>
+            </div>
+            <h1>ULC Tickets</h1>
+            <h2>Veranstaltungsübersicht</h2>
+            <p class="pageDescription">
+                Von Mittwoch ab 18 Uhr bis Samstag um 18 Uhr kannst du dir hier
+                Tickets für die Celebration am Sonntag sichern. <br /><br />
+                Urban Kids Church kann zurzeit leider nicht stattfinden.
+            </p>
+            <table id="overview">
+                <thead>
+                    <tr>
+                        <td class="date">Datum</td>
+                        <td class="title">Titel</td>
+                        <td class="seats">Sitzplätze</td>
+                        <td class="bookingAction">Buchung</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="">
+                        <td class="date">01.05.2021 17:00</td>
+                        <td class="title">Encounter Night YOUTH ONLY</td>
+                        <td class="seats">bis zu 4</td>
+                        <td class="bookingAction">
+                            <a
+                                class="linkButton dobooking"
+                                href="https://tickets.urbanlifechurch.de/?page=createBooking&amp;eventID=S5G5KW4VYA"
+                                ><input type="submit" value="Reservieren" /></a
+                            ><a
+                                class="linkButton cancelbooking"
+                                href="https://tickets.urbanlifechurch.de/?page=cancelBooking&amp;eventID=S5G5KW4VYA"
+                                ><input
+                                    type="submit"
+                                    value="Buchung stornieren"
+                            /></a>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td class="date">02.05.2021 13:00</td>
+                        <td class="title">13Uhr Celebration</td>
+                        <td class="seats">bis zu 105</td>
+                        <td class="bookingAction">
+                            <a
+                                class="linkButton dobooking"
+                                href="https://tickets.urbanlifechurch.de/?page=createBooking&amp;eventID=TOYK3DLKTU"
+                                ><input type="submit" value="Reservieren" /></a
+                            ><a
+                                class="linkButton cancelbooking"
+                                href="https://tickets.urbanlifechurch.de/?page=cancelBooking&amp;eventID=TOYK3DLKTU"
+                                ><input
+                                    type="submit"
+                                    value="Buchung stornieren"
+                            /></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <style>
+                #overview td:nth-of-type(1):before {
+                    content: "Datum:";
+                }
+                #overview td:nth-of-type(2):before {
+                    content: "Titel:";
+                }
+                #overview td:nth-of-type(3):before {
+                    content: "Sitzplätze:";
+                }
+                #overview td:nth-of-type(4):before {
+                    content: "Buchung:";
+                }
+                #overview td:nth-of-type(5):before {
+                    content: "Admin:";
+                }
+            </style>
+            <div id="copyright">
+                © by <a href="http://ep.draigon.de/">DraigonDevelopment</a>
+            </div>
+        </div>
+    </body>
+</html>

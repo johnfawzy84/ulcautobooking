@@ -1,0 +1,1179 @@
+/*
+*Add custom Styles to "/custom/styles.css"
+*
+*thx for "pimp" to D.F. ;) 
+*/
+/*for all eventplanner-elements: remove all styles, maybe set by previos or CMS-css*/ 
+.eventplanner * {
+	all: revert;
+}
+
+/*now customize all css for Eventplanner*/
+
+.eventplanner{
+    padding:0em 1em;
+    font-family: sans-serif;
+    max-width: 1200px;
+    margin:auto;
+}
+
+.eventplanner form {
+	display: inline;
+}
+
+.eventplanner .backButton{
+	float:right;
+}
+
+.eventplanner h1{
+	margin-top: 0em;
+	margin-bottom: 1rem;
+}
+
+.eventplanner h2{
+	margin-top: 0em;
+	margin-bottom: 1rem;
+}
+
+.eventplanner h3{
+	font-size: 1rem;
+	margin-left:2px;
+	font-weight: normal;
+	margin-top: 0px;
+	margin-bottom: 1rem;
+}
+
+.eventplanner .pageDescription{
+	margin-bottom: 1em;
+	padding: 0.5em;
+	border: 1px solid lightgrey;
+}
+
+
+.eventplanner #templateContentString textarea{
+	margin-bottom: 1em;
+	padding: 0.5em;
+	width: 96%;
+	color: blue;
+	height:20em;
+	font-size:150%;
+	font-weight: bold;
+	border: 1px solid lightgrey;
+	white-space: pre;
+	overflow-x: auto;
+}
+
+.eventplanner .warningFieldset{
+	border: 2px dotted red;
+	padding: 0.5em 1em 0.5em 1em;
+	color: red;
+}
+.eventplanner .warningFieldset span{
+	display: block;
+	margin-left: 2em;
+	font-style:italic;
+	margin-top: 0.2em;
+}
+
+.eventplanner .additionalEventinfo, .eventplanner .additionalBookinginfo{
+	padding:1em;
+	white-space: pre-wrap;
+}
+
+.eventplanner .bookingInfo, .eventplanner .delete{
+ 	width:2em;
+	min-width:2em;
+	max-width:2em;
+}
+
+.eventplanner .delete input:hover{
+ 		background-color: red !important;
+}
+
+.eventplanner .delete input{
+        background-image: url("../images/delete.png")  !important;
+        background-position: center;
+        background-repeat: no-repeat; 
+        background-size: cover; 
+}
+
+.eventplanner .bookingInfo span{
+	width:2em;
+	height:2em;
+}
+.eventplanner .bookingInfo span img{
+	width:2em;
+	height:2em;
+}
+
+.eventplanner .bookingInfo span:hover span{
+	display: block;
+}
+
+.eventplanner .bookingInfo span span{
+	position:absolute;
+	display: none;
+        margin-left: 2em;
+        margin-top: -1.5em;
+        padding: 0em 1em 1em 1em;
+	width:auto;
+	overflow: auto;
+	height: auto;
+        background-color: white;
+}
+
+.eventplanner .bookingInfo span span fieldset{
+  border: 2px solid black;
+padding: 0.5em;
+	white-space: pre-wrap;
+}
+
+.eventplanner legend{
+	font-size: larger;
+	font-weight: bold;
+}
+
+.eventplanner fieldset{
+	padding-top: 0em;
+	padding-bottom: 0em;
+	border: 1px solid lightgrey;
+    margin: 1em 0;
+}
+
+.eventplanner .labeledOutput{
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.eventplanner .labeledOutput label {
+	font-weight: bold;
+	display: block;
+	float: left;
+	width: 12em;
+}
+
+.eventplanner .labeledOutput input{
+	width: 100%;
+	display: block;
+}
+
+.eventplanner .labeledInput{
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.eventplanner .personFieldset{
+	padding-left: 1em;
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+}
+
+.eventplanner .labeledInput label {
+	font-weight: normal;
+	display: block;
+}
+
+.eventplanner .labeledInput input:focus {
+    border: 1px solid black;
+    outline:0;
+}
+
+.eventplanner .template{
+	padding: 1em;
+}
+.eventplanner .template select{
+	width: 100%;
+	margin-bottom: 1em;
+	display: block;
+}
+
+.eventplanner .labeledInput input{
+	width: 100%;
+	display: block;
+	border: 1px solid grey;
+    padding:0.5em;
+    margin-top:0.25em;
+    max-width: 300px;
+    font-size:1em;
+}
+
+.eventplanner .labeledInput textarea{
+	width: 96%;
+	display: block;
+	border: 1px solid grey;
+    padding:0.5em;
+    margin-top:0.25em;
+    margin-right:0.25em;
+    font-size:1em;
+	height: 10em;
+}
+
+.eventplanner select{
+	width: 100%;
+	display: block;
+	border: 1px solid grey;
+    padding:0.5em;
+    margin-top:0.25em;
+    font-size:1em;
+}
+
+
+
+.eventplanner #deleteTemplate{
+	float: right;
+}
+
+.eventplanner input[type="submit"]{
+	cursor: pointer;
+    border: 0;
+    background-color:#eee;
+    font-weight:bold;
+    padding: 0.5em 1em;
+    font-size:1em;
+    margin-right:1px;
+}
+
+.eventplanner .labeledInput label[for="seats"]{
+	margin-top: 2em;
+}
+.eventplanner .labeledInput input[name="seats"]{
+	margin-bottom: 2em;
+}
+
+.eventplanner .labeledInput .checkbox{
+	float: left;
+	width: 1em !important;
+}
+
+.eventplanner .labeledInput .checkboxlabel{
+	margin-left: 3em;
+}
+
+.eventplanner input[type="submit"]:hover {
+    background-color: grey;
+    color: white
+}
+.eventplanner fieldset input[type="submit"]{
+	margin-bottom: 1em;
+}
+
+.eventplanner .bookingAction .dobooking input{
+    background-color: black;
+    color: white;
+    margin-bottom: 0.5em;
+}
+
+.eventplanner .initialisationAction{
+    background-color: black !important;
+    color: white !important;
+    margin-bottom: 0.5em !important;
+    width: 100%;
+	white-space: normal;
+}
+
+.eventplanner .initialisationAction:hover {
+    background-color: grey !important;
+}
+
+.eventplanner .bookingAction .showseats input{
+    background-color: black;
+    color: white;
+    margin-top: 0.5em;
+}
+
+.eventplanner .bookingAction .dobooking input:hover {
+     background-color: grey;
+}
+
+.eventplanner .submitStepB {
+     background-color: black;
+    color: white;
+    margin-bottom: 0.5em;
+}
+
+.eventplanner .submitStepB:hover {
+     background-color: grey;
+}
+
+.eventplanner .error {
+	display: block;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	padding-left: 2em;
+	padding-right: 2em;
+	font-weight: bold;
+	margin-bottom: 1em;
+	padding: 0.5em;
+     background-color: red;
+    border: 0;
+    color: white ;
+}
+
+.eventplanner .error span{
+	display: block;
+	margin-left: 2em;
+	font-style:italic;
+	margin-top: 0.2em;
+}
+
+.eventplanner .callback {
+	display: block;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 2em;
+	padding-right: 2em;
+	color: blue;
+	font-weight: bold;
+	border: 2px dotted blue;
+	margin-bottom: 1em;
+}
+
+.eventplanner #focus{
+	display:block;
+	height:0px;
+}
+
+.eventplanner thead {
+	font-weight: bold;
+}
+
+.eventplanner .info {
+	display: block;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	padding-left: 2em;
+	padding-right: 2em;
+	color: green;
+	border: 2px dotted green;
+	margin-bottom: 1em;
+}
+
+.eventplanner .info a{
+	color: green;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.eventplanner .description {
+	display: block;
+	font-size: smaller;
+}
+
+.eventplanner #overview{
+	
+}
+
+.eventplanner #overview, .eventplanner  #overview th, .eventplanner  #overview td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.eventplanner #overview td{
+	padding: 0.5em;
+}
+
+.eventplanner #bookings, .eventplanner  #bookings th, .eventplanner  #bookings td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.eventplanner #bookings td {
+	vertical-align: top;
+	padding: 0.1em;
+}
+
+.eventplanner #bookings .phoneAndMail .phone, .eventplanner #bookings .phoneAndMail .mail{
+	display: block;
+}
+
+.eventplanner #bookings .seats .count {
+	display: block;
+}
+
+.eventplanner #bookings .seats .count label {
+	display: inline-block;
+	font-weight: bold;
+	width: 5rem;
+}
+
+.eventplanner #bookings .seats .planned label {
+	display: block;
+	font-weight: bold;
+	width: 5rem;
+}
+
+.eventplanner .planFieldset{
+	padding: 1em;
+}
+
+.eventplanner .bookingFieldset{
+	padding: 1em;
+}
+
+.eventplanner #bookings {
+	width:100%;
+}
+
+.eventplanner #bookings .delete {
+	text-align: center;
+	width: 8em;
+}
+
+.eventplanner #bookings .delete input{
+	margin-bottom: 0em;
+}
+
+.eventplanner #bookings .id {
+	width: 6em;
+	text-align: left;
+}
+
+.eventplanner #bookings .bookingId {
+	width: 6em;
+}
+
+.eventplanner #bookings .seatsCount {
+	width: 6.5em;
+}
+
+.eventplanner #overview td {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.eventplanner #overview {
+	width: 100%;
+}
+
+
+.eventplanner #overview .bookingAction{
+	width: 15em;
+}
+
+.eventplanner #overview .notShownForAll{
+	 background-color: rgba(255,0,0,0.1);
+}
+
+.eventplanner #overview .notReleased{
+	
+}
+
+.eventplanner #overview .started{
+	color: grey;
+    font-style: italic;
+}
+
+.eventplanner #overview .closedBooking{
+	color: grey;
+    font-style: italic;
+}
+
+
+.eventplanner #overview .date{
+	width: 8em;
+}
+
+.eventplanner #overview .seats{
+	width: 6em;
+	text-align: center;
+}
+
+.eventplanner #overview .adminAction{
+	width: 4em;
+	text-align: center;
+}
+	
+.eventplanner #overview .noEvents{
+	font-weight: bold;
+	text-align: center;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+.eventplanner #plan{
+	padding-left:2em;
+	padding-right:2em;
+}
+
+.eventplanner #plan th, .eventplanner  #plan td {
+	border: 1px solid black;
+}
+
+.eventplanner #qr-canvas {
+	position:absolute;
+	top:0px;
+	left:0px;
+  	width: 100%;
+	height:100%;
+	display: none;
+}
+
+.eventplanner .bookingqr{
+	width:8em;
+	height:8em;
+	display: inline-block;
+	float:right;
+}
+
+.eventplanner #plan td {
+	width: 2em;
+	min-width: 2em;
+	height: 2em;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.eventplanner #plan  .leftPadding{
+	border: none;
+}
+
+.eventplanner #plan .free {
+	background-color: white;
+}
+
+.eventplanner #plan .blocked {
+	background-color: blue;
+}
+
+.eventplanner #plan{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.eventplanner #plan .gap {
+	background-color: red;
+}
+
+.eventplanner #plan .rowId {
+	background-color: grey;
+	font-weight: bold;
+    white-space: nowrap;
+	text-align: left;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.eventplanner .inputError label{
+	color: red !important;
+	font-weight: bold !important;
+}
+.eventplanner .inputError input, .eventplanner  .inputError textArea, .eventplanner  .inputError select, .eventplanner  .inputError checkbox{
+	border: 2px solid red !important;
+}
+.eventplanner .fieldError{
+	display: block;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	padding-left: 2em;
+	padding-right: 2em;
+	font-weight: bold;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	padding: 0.5em;
+     background-color: red;
+    border: 0;
+    color: white ;
+}
+
+.eventplanner #newVersion{
+    font-size: 70%;
+	padding: 0.5em;
+	font-weight: bold;
+	border: 1px solid green;
+    color: green
+}
+.eventplanner #headerActions{
+
+}
+.eventplanner #headerActions input[type="submit"]{
+            margin-top: 1.1em;
+            display: block;
+            font-size: 70% !important;
+}
+
+.eventplanner #headerActions .adminActions input{
+            width:8rem;
+}
+
+.eventplanner #headerActions .adminActions .submenu input[type="submit"]{
+     margin-top: 0em;
+}
+
+.eventplanner #headerActions .adminActions .submenu{
+	position:absolute;
+	display: none;
+}
+
+.eventplanner #headerActions .adminActions .adminMenu:hover{
+       background-color: #eee;
+      color: black;
+}
+
+.eventplanner #headerActions .adminActions:hover .submenu{
+	display: block;
+}
+
+.eventplanner .login span{
+	display: inline-block;
+	margin-right: 0em; 
+}
+.eventplanner .login span input{
+	display: block;
+	width: 8rem;
+}
+
+.eventplanner .login label{
+	display: block;
+	width:8rem;
+	text-align: left;
+	font-size: 70% !important;
+	margin-right: 1em;
+}
+
+.eventplanner .login .loginSubmit{
+     display: inline-block !important;
+     position:relative;
+     top: -0.1em;
+}
+.eventplanner #headerActions div{
+	display: inline-block;
+}
+
+.eventplanner #headerActions{
+	text-align:right;
+	align:right;
+}
+
+.eventplanner #plan .booked {
+	background-color: green;
+}
+
+.eventplanner #plan .otherSeat {
+	background-color: blue;
+}
+
+.eventplanner #plan .ownSeat {
+	background-color: green;
+}
+
+.eventplanner #plan .splitRow{
+	background-color: transparent;
+	border: none;	
+	height: 0.2em;
+}
+
+.eventplanner #plan .blockDescriptionEmpty, .eventplanner  #plan .seatCounterEmpty{
+	background-color: transparent;
+	border: none;	
+	height: 1em;
+}
+
+.eventplanner #plan .blockDescription{
+	background-color: #e6e6e6;
+	border: none;	
+	text-align:center;
+	font-size: 80%;
+	height: 1em;
+	font-style:italic;
+	padding-top: 0em;
+	padding-bottom: 0em;
+}
+
+/*editplan*/
+.eventplanner #plan .headerRow:hover{
+border: 1px solid red;
+}
+
+.eventplanner #plan .headerRow .headerInput:hover, .eventplanner  #plan .headerRow .headerInput:focus{
+	color: red;
+}
+.eventplanner #plan .headerRow .headerInput{
+	background-color: #e6e6e6;
+    border: none;
+	height:100% !important;
+	width:100%;
+	text-align:center;
+	height: 1em;
+	font-style:italic;
+	padding: 0em;
+}
+.eventplanner #plan .rowEdit:hover{
+	border: 1px solid red;
+}
+
+.eventplanner #plan .rowId .rowNameInput:hover, .eventplanner  #plan .rowId .rowNameInput:focus{
+	color: red;
+}
+.eventplanner #plan .rowNameInput{
+	background-color: grey;
+    border: none;
+	height:100% !important;
+	width:10em;
+	text-align:center;
+	height: 1em;
+	font-style:italic;
+	padding: 0em;
+}
+.eventplanner #plan .blockEdit .blockNameInput:hover, .eventplanner  #plan .blockEdit .blockNameInput:focus{
+	color: red;
+}
+.eventplanner #plan .blockEdit .blockNameInput{
+	background-color: #e6e6e6;
+    border: none;
+	width:100%;
+	text-align:center;
+	height: 1em;
+	font-style:italic;
+	padding: 0em;
+}
+
+.eventplanner #plan .blockEdit{
+	border: 1px solid white;
+}
+
+.eventplanner #plan .blockEdit .prioInput:hover, .eventplanner  #plan .blockEdit .prioInput:focus{
+	color: red;
+}
+.eventplanner #plan .blockDescription .prioInput{
+	background-color: transparent;
+    border: none;
+	width:1.2em;
+	text-align:center;
+	height: 1em;
+	font-style:italic;
+	padding: 0em;
+}
+
+.eventplanner #plan .blockEdit:hover{
+	border: 1px solid red;
+}
+
+
+.eventplanner #plan .sel:hover{
+ 	border: 1px solid red;
+}
+.eventplanner #plan .sel{
+ 	overflow: hidden;
+	width: 2em;
+	min-width: 2em;
+	max-width: 2em;
+}	
+
+.eventplanner #plan .sel select:hover{
+ 	color: red;
+}
+
+.eventplanner #plan .sel select{
+	background-color: white;
+	border: none;
+	cursor:pointer;
+	color: black;
+	width: 4em;
+	text-align: left;
+}
+
+
+/*editplan*/
+
+.eventplanner .headerRowSpacerTop{
+	background-color: transparent;
+	border: none !important;	
+	height: 0.5em !important;	
+	}
+.eventplanner .headerRowSpacerBottom{
+	background-color: transparent;
+	border: none !important;	
+	height: 0.5em !important;	
+	}
+.eventplanner .headerRow:hover {
+	border: 1px solid red !important;	
+	}
+.eventplanner .headerRow {
+	background-color: #e6e6e6;
+	border: 1px solid #e6e6e6 !important;		
+	text-align:center;
+	font-size: 80%;
+	height: 2.1rem !important;
+	font-style:italic;
+	padding-top: 0em;
+	padding-bottom: 0em;
+}
+.eventplanner .addField:hover {
+	border: 1px solid red !important;	
+	color: red;	
+	}
+.eventplanner .addField{
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.eventplanner .leerRow{
+	background-color: transparent;
+	border: 1px dotted black !important;	
+	text-align:center;
+	font-size: 80%;
+	height: 2.1rem !important;
+	font-style:italic;
+	padding-top: 0em;
+	padding-bottom: 0em;
+}
+
+.eventplanner #plan .actionTD div:hover{
+	border: 1px solid red;
+	color: red;
+}
+
+.eventplanner #plan .actionTD select:hover{
+    color: red;
+}
+.eventplanner #plan .actionTD div{
+color: black;
+	border: 1px solid black;
+	width: 6em;
+	min-width: 6em;
+	max-width: 6em;
+	height: 2em;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+}
+
+.eventplanner #plan .actionTD{
+	width: 6em;
+       border: none;
+	padding: 0px;
+}
+
+.eventplanner #plan .actionTD div select{
+	background-color: white;
+    border: none;
+    padding: 0em 0em 0em 0.8em;
+	width: 8em;
+}
+
+.eventplanner .editTemplateFieldset{
+	padding: 1em;	
+}
+
+
+.eventplanner #planGraficContainer{
+	overflow-x: auto;
+}
+
+.eventplanner #plan .padding{
+	height: 1em;
+	border: none;
+}
+
+.eventplanner #plan .seatCounter{
+	background-color: #e6e6e6;
+	border: none;	
+	text-align:center;
+	font-size: 80%;
+	font-style:italic;
+	height: 1em;
+	padding-top: 0em;
+	padding-bottom: 0em;
+}
+
+.eventplanner .bottomPaddingAction{
+	margin-bottom: 1em;
+	display: inline-block;
+}
+
+.eventplanner .actions{
+	display: block;
+	height: 2em;
+    margin-bottom:1em;
+}
+
+
+.eventplanner .callback .question{
+	margin-bottom: 1em;
+	display: block;
+}
+
+.eventplanner #bookingsInformation{
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.eventplanner #copyright{
+	text-align: right;
+	display: block;
+	font-size: 8px;
+	margin-top: 2px;
+}
+.eventplanner #copyright a{
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
+}
+
+.eventplanner td:before {
+	display: none;
+	}
+
+@media only screen and (max-width: 50em) {
+		
+	.eventplanner .labeledOutput label {
+		float: none;
+	}
+	
+	.eventplanner #overview, .eventplanner  #overview thead, .eventplanner  #overview tbody, .eventplanner  #overview th, .eventplanner  #overview td, .eventplanner  #overview tr {
+		display: block;
+	}
+	
+	/* Hide .dataTable table headers (but not display: none;, for
+accessibility) */
+	.eventplanner #overview thead {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.eventplanner #overview tr:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+	
+	.eventplanner #overview{
+		border: none;
+	}
+
+	.eventplanner #overview tr { 
+		border: 1px solid black;
+  		padding: 1rem;
+
+	}
+	
+	.eventplanner #overview td:before { /* Now like a .dataTable table header */
+		display: block;
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 0rem;
+		left: 0rem;
+		width: 6rem;
+		font-weight: bold;
+		white-space: nowrap;
+		text-align: left;
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+		color: black;
+	}
+	
+	.eventplanner #overview td{
+  		min-height: 1.25rem;
+  		line-height: 1.25;
+  		border-left: 0px !important;
+  		width: auto;
+		border: none; !important;
+		position: relative;
+		padding-left: 6rem;
+	}
+	
+	
+	.eventplanner #overview td input{
+		display: block;
+	}
+	
+	.eventplanner #overview td a{		
+		text-decoration: none;
+	}
+	
+	.eventplanner #overview td:nth-of-type(7), .eventplanner td:nth-of-type(5) {
+		text-align: left;
+	}
+	
+	.eventplanner #overview .seats{
+		text-align: left;
+	}
+	
+	
+	
+	.eventplanner #overview .noEvents:before{
+		display: none;
+	}
+	.eventplanner #overview .noEvents{
+		padding-left: 0rem;
+	}	
+}
+
+.eventplanner .init .successDIV {
+	border: 2px dotted green;
+	margin: 0.5em;
+	padding: 0.5em;
+	font-weight: bold;
+	color: green;
+	display: block;
+}
+
+.eventplanner .init .warnDiv {
+	border: 2px dotted red;
+	margin: 0.5em;
+	padding: 0.5em;
+}
+
+.eventplanner .init .warn {
+	font-weight: bold;
+	color: red;
+	display: block;
+}
+
+.eventplanner .init .checkVersionHint {
+	font-size: 70%;
+	color: grey;
+	display: block;
+}
+
+/* tab - "hack"*/
+/* Tabs mit radio-Buttons */
+.eventplanner .tabbed{
+}
+
+.eventplanner .tabbed figure { 
+   display: block; 
+   margin-left: 0; 
+   border-bottom: 1px solid silver;
+   clear: both;
+}
+
+.eventplanner .tabbed > input{
+	display: none; 
+}
+
+.eventplanner .tabbed figure>div {
+  position: absolute;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  display: block;
+  padding: 0px;
+  border: 1px solid silver;
+   background-color: #fff;
+  line-height: 1.5em;
+  letter-spacing: 0.3px;
+  color: #444;
+}
+.eventplanner #tab1:checked ~ figure .tab1, .eventplanner  #tab2:checked ~ figure .tab2 { 
+  /*make the selectedtab visible and sized*/
+  visibility: visible;
+  position:static;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+.eventplanner nav label {
+   float: left;
+   padding: 15px 15px;
+   border-top: 1px solid silver;
+   border-right: 1px solid silver;
+    background-color: #eee;
+   color: black;
+}
+
+.eventplanner nav label:nth-child(1) { 
+	border-left: 1px solid silver; 
+}
+.eventplanner nav label:hover { 
+	 background-color: grey;color: white; 
+}
+.eventplanner nav label:active { 
+	 background-color: #ffffff; 
+}
+
+.eventplanner #tab1:checked ~ nav label[for="tab1"], .eventplanner  #tab2:checked ~ nav label[for="tab2"] {
+   background-color: white;
+  color: #111;
+  position: relative;
+  border-bottom: none;
+}
+
+.eventplanner #tab1:checked ~ nav label[for="tab1"]:after, .eventplanner  #tab2:checked ~ nav label[for="tab2"]:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+   background-color: white;
+  left: 0;
+  bottom: -1px;
+}
+
+.eventplanner #users{
+        border: 1px solid black;
+	border-collapse: collapse;
+        width: 100%;
+}
+.eventplanner #users td{
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 0.5em;
+}
+.eventplanner #users .role{
+	width: 25em; 
+	text-align: center;
+}
+
+.eventplanner #users .action{
+	width: 8em; 
+	text-align: center;
+}
+
+.eventplanner #users .role input{
+	display: inline-block;
+	width: 8em;
+}
+.eventplanner #users .roleButtonActive input:hover{
+    color: black !important;
+    background-color: #eee !important;
+}
+.eventplanner #users .roleButtonActive input{
+    cursor: default !important;
+    border: 3px solid red !important;
+}
+.eventplanner #users .roleButtonActive input{
+    border: 3px solid red !important;
+}
+.eventplanner .accountUsername{
+	display: block;
+	margin: 1em;
+}
+.eventplanner #passwordRetype{
+	margin-bottom: 3em;
+}
+
+
+.eventplanner .prio {
+	width: 8em;
+	margin-top: 1em;
+	border: 1px solid grey;
+	text-align: center;
+	min-width: 8em;
+	max-width: 8em;
+}
+
+.eventplanner .prio input {
+        font-size:60%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.eventplanner .prio .prioValue {
+	display: inline-block;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	padding-top: 0.5em;
+}
+
+.eventplanner .prio .lowerBookingPrio {
+	background-image: url("../images/double_arrow_down.png") !important;
+}
+
+.eventplanner .prio .raiseBookingPrio {
+	background-image: url("../images/double_arrow_up.png") !important;
+}
