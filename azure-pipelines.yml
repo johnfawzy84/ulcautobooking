@@ -41,22 +41,6 @@ stages:
             displayName: 'John - Run booking puppeteer script'
             continueOnError: true 
           - script: |    
-              node puppeteer_test.js 2 $(telephoneNumber2) $(emailAddress2) $(user3FN) $(user3LN) $(user4FN) $(user4LN) Chris Voige Ophelie Vernet
-            displayName: 'Nico - Run booking puppeteer script'
-            continueOnError: true
-          - script: |    
-              node puppeteer_test.js 2 $(telephoneNumber3) $(emailAddress3) $(user11FN) $(user11LN) $(user12FN) $(user12LN) 
-            displayName: 'Ruben - Run booking puppeteer script'
-            continueOnError: true    
-          - script: |    
-              node puppeteer_test.js 2 $(telephoneNumber4) $(emailAddress4) $(user5FN) $(user5LN) $(user6FN) $(user6LN) 
-            displayName: 'Lukas - Run booking puppeteer script'
-            continueOnError: true              
-          - script: |    
-              node puppeteer_test.js 1 $(telephoneNumber6) $(emailAddress6) $(user9FN) $(user9LN)
-            displayName: 'Chris - Run booking puppeteer script'
-            continueOnError: true     
-          - script: |    
               node puppeteer_test.js 1 $(telephoneNumber7) $(emailAddress7) $(user10FN) $(user10LN)
             displayName: 'Ophelie - Run booking puppeteer script'
             continueOnError: true     
