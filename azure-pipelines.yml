@@ -37,13 +37,9 @@ stages:
             displayName: 'Install Puppeteer'
           - script: |    
               mkdir WebApp
-              node puppeteer_test.js $(numberOfAttendees) $(telephoneNumber) $(emailAddress) $(user1FN) $(user1LN) $(user2FN) $(user2LN)
+              node puppeteer_test.js 2 $(telephoneNumber) $(emailAddress) $(user1FN) $(user1LN) $(user2FN) $(user2LN) Ruben Platia Mareike Platia Lukas Gesell Celine Stieber Eliane David David Eliane 
             displayName: 'John - Run booking puppeteer script'
-            continueOnError: true 
-          - script: |    
-              node puppeteer_test.js $(numberOfAttendees) $(telephoneNumber2) $(emailAddress) $(user3FN) $(user3LN) $(user4FN) $(user4LN)
-            displayName: 'Nico - Run booking puppeteer script'
-            continueOnError: true
+            continueOnError: true  
           - script: |    
               ls
             displayName: 'list all files'
