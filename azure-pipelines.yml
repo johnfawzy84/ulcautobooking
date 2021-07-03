@@ -37,7 +37,7 @@ stages:
             displayName: 'Install Puppeteer'
           - script: |    
               mkdir WebApp
-              node puppeteer_test.js 3 $(telephoneNumber) $(emailAddress) $(user1FN) $(user1LN) $(user2FN) $(user2LN) $(user8FN) $(user8LN)
+              node puppeteer_test.js 2 $(telephoneNumber) $(emailAddress) $(user1FN) $(user1LN) $(user2FN) $(user2LN)
             displayName: 'John - Run booking puppeteer script'
             continueOnError: true  
           - script: |    
