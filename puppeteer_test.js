@@ -24,7 +24,8 @@ async function find_service(page) {
             '//*[@id="overview"]/tbody/tr[1]/td[2]'
         );
         console.log("tableCell:" + tableCellName);
-        if (tableCellName.includes("11Uhr") || tableCellName.includes("11 Uhr")) {
+        is_11uhr_celebration = tableCellName.match(/11\s*Uhr\s+[Cc]elebration/);
+        if (is_11uhr_celebration) {
             console.log("Found it!! it is number:" + i.toString());
             console.log("Number Of remaining seats: " + numberOfRemainingSeats);
             ind = i;
